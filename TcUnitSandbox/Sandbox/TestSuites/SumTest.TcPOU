@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="SumTest" Id="{1abed410-f8cf-4bb5-a8a0-16adc80e46b7}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK SumTest EXTENDS FB_TestSuite
+VAR_INPUT
+	Dint1s : ARRAY[0..2] OF DINT;
+	Dint2s : ARRAY[0..2] OF DINT;
+	expected : ARRAY[0..2] OF DINT;
+	adders : ARRAY[0..2] OF ISum;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[addingTest('test0', Dint1s[0], Dint2s[0], expected[0], adders[0]);
+addingTest('test1', Dint1s[1], Dint2s[1], expected[1], adders[1]);
+addingTest('test2', Dint1s[2], Dint2s[2], expected[2], adders[2]);]]></ST>
+    </Implementation>
+    <Method Name="addingTest" Id="{b97b6f69-292e-46b7-b66d-3f4991566da4}">
+      <Declaration><![CDATA[METHOD addingTest
+VAR_INPUT
+	testName : STRING;
+	dint1 : DINT;
+	dint2 : DINT;
+	expected : DINT;
+	adder : ISum;
+END_VAR
+VAR
+	actual : DINT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[TEST(testName);
+
+actual := adder.Sum(dint1, dint2);
+AssertEquals(expected, actual, 'The result was not like expected');
+TEST_FINISHED();]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="SumTest">
+      <LineId Id="9" Count="0" />
+      <LineId Id="14" Count="1" />
+    </LineIds>
+    <LineIds Name="SumTest.addingTest">
+      <LineId Id="5" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="19" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

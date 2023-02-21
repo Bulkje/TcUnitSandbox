@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <Itf Name="ISumTest" Id="{aeeefea2-b8f3-401b-934a-2fd51e2a426a}">
+    <Declaration><![CDATA[INTERFACE ISumTest
+]]></Declaration>
+    <Method Name="prepareSumTest" Id="{051f45bb-16a4-4cb3-ae99-3d55dbba143d}">
+      <Declaration><![CDATA[(*This method is used to prepare arrays with dint1 dint2 and expected dints*)
+METHOD prepareSumTest : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

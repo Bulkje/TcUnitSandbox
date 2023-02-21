@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <Itf Name="ISum" Id="{e39d6e09-a369-4129-9752-3448bbb020db}">
+    <Declaration><![CDATA[INTERFACE ISum
+]]></Declaration>
+    <Method Name="Sum" Id="{2d4a4a07-7b2b-47df-8e72-927c70ac455b}">
+      <Declaration><![CDATA[(*This method adds two DINT numbers and returns the result in Sum*)
+METHOD Sum : DINT;
+VAR_INPUT
+	Dint1 : DINT;
+	Dint2 : DINT;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

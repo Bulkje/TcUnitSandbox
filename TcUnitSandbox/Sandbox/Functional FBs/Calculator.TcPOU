@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="Calculator" Id="{38feb073-ce6b-4189-971d-839f619c1a28}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Calculator IMPLEMENTS ISum
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Sum" Id="{86933668-06b7-48b0-a6b4-659d968eedae}">
+      <Declaration><![CDATA[METHOD Sum : DINT
+VAR_INPUT
+	Dint1 : DINT;
+	Dint2 : DINT;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[Sum := Dint1 + Dint2;]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="Calculator">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="Calculator.Sum">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

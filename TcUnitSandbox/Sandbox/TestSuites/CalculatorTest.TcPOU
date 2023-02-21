@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="CalculatorTest" Id="{4db160b9-131d-45cf-9faa-c0ef572d92d9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK CalculatorTest EXTENDS FB_TestSuite IMPLEMENTS ISumTest
+VAR
+	_dint1s : ARRAY[0..2] OF DINT;
+	_dint2s : ARRAY[0..2] OF DINT;
+	_expected : ARRAY[0..2] OF DINT;
+	_adders : ARRAY[0..2] OF ISum;
+	sumtest : SumTest;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[prepareSumTest();
+sumtest(Dint1s := _dint1s, Dint2s := _dint2s, expected := _expected, adders := _adders);]]></ST>
+    </Implementation>
+    <Method Name="prepareSumTest" Id="{a8af4858-9b43-4cbd-82a5-4949d860ebce}">
+      <Declaration><![CDATA[{warning 'add method implementation '}
+(*This method is used to prepare arrays with dint1 dint2 and expected dints*)
+METHOD prepareSumTest : BOOL
+VAR_INST
+	adder0 : Calculator;
+	adder1 : Calculator;
+	adder2 : Calculator;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_dint1s[0] := 0;
+_dint2s[0] := 5;
+_expected[0] := 5;
+_adders[0] := adder0;
+
+_dint1s[1] := 5;
+_dint2s[1] := 0;
+_expected[1] := 5;
+_adders[1] := adder1;
+
+_dint1s[2] := 45;
+_dint2s[2] := 2;
+_expected[2] := 47;
+_adders[2] := adder2;
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="CalculatorTest">
+      <LineId Id="16" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="CalculatorTest.prepareSumTest">
+      <LineId Id="20" Count="13" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

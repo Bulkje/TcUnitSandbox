@@ -1,0 +1,23 @@
+﻿*.compiled-library
+*.library
+*.suo
+*.json
+*.sqlite
+*.~u
+*.bak
+*.tmcRefac
+*.compileinfo
+TcUnitSandbox/_Boot/TwinCAT RT (x64)/CurrentConfig.xml
+TcUnitSandbox/_Boot/TargetDescription.xml
+TcUnitSandbox/_Boot/TwinCAT RT (x64)/CurrentConfig.tszip
+*.app
+*.autostart
+*.cid
+*.crc
+*.occ
+*.oce
+*.ocm
+*.tizip
+*.tpzip
+*.tclrs
+*.tmc
